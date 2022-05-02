@@ -1,4 +1,4 @@
-package com.lepesha.client.model;
+package com.lepesha.model;
 
 public class Request {
     private String message;

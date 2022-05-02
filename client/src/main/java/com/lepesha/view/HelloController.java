@@ -1,4 +1,4 @@
-package com.lepesha.client.view;
+package com.lepesha.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +21,7 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/com/lepesha/client/loginView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/com/lepesha/loginView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

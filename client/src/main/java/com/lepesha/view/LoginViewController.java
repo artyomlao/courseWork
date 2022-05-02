@@ -1,4 +1,4 @@
-package com.lepesha.client.view;
+package com.lepesha.view;
 
 public class LoginViewController {
 }

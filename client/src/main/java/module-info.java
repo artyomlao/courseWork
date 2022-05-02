@@ -3,10 +3,10 @@ module com.lepesha.client {
     requires javafx.fxml;
 
 
-    opens com.lepesha.client to javafx.fxml;
+    opens com.lepesha to javafx.fxml;
 
-    exports com.lepesha.client.controller;
-    opens com.lepesha.client.controller to javafx.fxml;
-    exports com.lepesha.client.view;
-    opens com.lepesha.client.view to javafx.fxml;
+    exports com.lepesha.controller;
+    opens com.lepesha.controller to javafx.fxml;
+    exports com.lepesha.view;
+    opens com.lepesha.view to javafx.fxml;
 }

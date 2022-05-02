@@ -1,4 +1,4 @@
-package com.lepesha.client.model;
+package com.lepesha.model;
 
 public enum RequestType {
     OFFER, AUTHORISATION, REGISTRATION
