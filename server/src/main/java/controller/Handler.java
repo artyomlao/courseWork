@@ -1,38 +1,50 @@
 package controller;
 
-import model.Request;
-import model.RequestType;
+import model.RequestChecker;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 
-public class Handler extends Thread{
-    private ObjectOutputStream os;
-    private ObjectInputStream is;
+import static model.RequestType.REGISTRATION;
+
+public class Handler extends Thread {
+    private static BufferedReader is;
+    private static BufferedWriter os;
     private Socket socket;
 
-    Handler(Socket socket){
+    public Handler(Socket socket) {
         this.socket = socket;
     }
 
     @Override
     public void run() {
         try {
-            os = new ObjectOutputStream(socket.getOutputStream());
-            is = new ObjectInputStream(socket.getInputStream());
+            is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            os = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-            while(socket.isConnected()){
-                Request request = (Request) is.readObject();
-                switch(request.getRequestType()){
-                    case REGISTRATION:
-                        break;
-                }
+            while (socket.isConnected()) {
+                System.out.println(socket.getInetAddress().getHostName() + "ждет");
+
+                String json;
+                json = is.readLine();
+
+                System.out.println(json);
+
+                new RequestChecker(json);
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        }
+    }
+
+    public static void send(String message) {
+        try {
+            os.write(message + "\n");
+            os.flush();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

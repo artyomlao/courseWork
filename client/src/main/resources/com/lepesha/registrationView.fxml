@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lepesha.view.RegistrationViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RegistrationViewController">
    <children>
-      <TextField layoutX="68.0" layoutY="136.0" prefHeight="25.0" prefWidth="185.0" promptText="Логин" />
-      <TextField layoutX="68.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Пароль" />
-      <TextField layoutX="343.0" layoutY="136.0" prefHeight="25.0" prefWidth="185.0" promptText="Имя" />
-      <TextField layoutX="343.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Номер телефона" />
-      <Button layoutX="258.0" layoutY="304.0" mnemonicParsing="false" onAction="#register" text="Регистрация" />
+      <TextField fx:id="login" layoutX="68.0" layoutY="136.0" prefHeight="25.0" prefWidth="185.0" promptText="Логин" />
+      <TextField fx:id="firstName" layoutX="343.0" layoutY="136.0" prefHeight="25.0" prefWidth="185.0" promptText="Имя" />
+      <TextField fx:id="number" layoutX="343.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Номер телефона" />
+      <Button fx:id="loginSignUpButton" layoutX="258.0" layoutY="304.0" mnemonicParsing="false" onAction="#register" text="Регистрация" />
+      <PasswordField fx:id="password" layoutX="68.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Пароль" />
+      <Label fx:id="message" layoutX="281.0" layoutY="258.0" prefHeight="17.0" prefWidth="38.0" text="х" textFill="#f80000" />
    </children>
 </AnchorPane>

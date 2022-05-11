@@ -10,5 +10,8 @@
         <module name="server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sharedResources" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>

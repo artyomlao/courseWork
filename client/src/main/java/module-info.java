@@ -1,12 +1,9 @@
-module com.lepesha.client {
+module client {
+    requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
+    requires json.simple;
 
-
-    opens com.lepesha to javafx.fxml;
-
-    exports com.lepesha.controller;
-    opens com.lepesha.controller to javafx.fxml;
-    exports com.lepesha.view;
-    opens com.lepesha.view to javafx.fxml;
+    opens controller to javafx.graphics;
+    opens view to javafx.fxml;
 }
