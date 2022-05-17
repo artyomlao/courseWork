@@ -1,0 +1,52 @@
+.search-box{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.left-vbox{
+    -fx-background-color: #D3D3D3;
+}
+
+.add-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 40;
+}
+
+.item-card{
+    -fx-background-color: #EE0000;
+    -fx-background-radius: 20;
+}
+.combo-box{
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+}
+
+.internet-shop-box{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 30;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10.0, 0, 0, 10.0);
+}
+
+.item{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.table-view-window{
+    -fx-background-color: linear-gradient(to right, #DDEFBB, #FFEEEE);
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}

@@ -1,6 +1,8 @@
-package model;
+package controller;
 
-import entity.UserInfo;
+import model.AdminInfo;
+import model.UserInfo;
+import service.AdminInfoService;
 import service.UserInfoService;
 
 import java.util.Iterator;
@@ -8,6 +10,7 @@ import java.util.List;
 
 public class Validation {
     private List<UserInfo> users;
+    private List<AdminInfo> admins;
     private UserInfo userInfo;
 
     Validation(){
@@ -17,11 +20,23 @@ public class Validation {
     Validation(UserInfo userInfo){
         this.userInfo =userInfo;
         users = new UserInfoService().getAll();
+        admins = new AdminInfoService().getAll();
     }
 
     //метод возвращает true при наличии данного логина в БД
-    public boolean checkLogin(){
+    public boolean checkLoginInUserTable(){
         Iterator<UserInfo> itr = users.iterator();
+
+        while(itr.hasNext()){
+            if(itr.next().getLogin().equals(userInfo.getLogin())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkLoginInAdminTable(){
+        Iterator<AdminInfo> itr = admins.iterator();
 
         while(itr.hasNext()){
             if(itr.next().getLogin().equals(userInfo.getLogin())){
@@ -49,6 +64,17 @@ public class Validation {
         while(itr.hasNext()){
             if(itr.next().getLogin().equals(userInfo.getNumber())){
                 return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkAdminTable(String login, String password) {
+        Iterator<AdminInfo> itr = admins.iterator();
+
+        while (itr.hasNext()){
+            if(itr.next().getLogin().equals(login)){
+                if(itr.next().getPassword().equals(password)) return true;
             }
         }
         return false;

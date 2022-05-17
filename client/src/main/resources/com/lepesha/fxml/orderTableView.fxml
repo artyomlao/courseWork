@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OrderTableViewController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="343.0" stylesheets="@../css/orderView.css">
+         <children>
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="207.0" text="Ресторан" textFill="#858585">
+               <font>
+                  <Font name="Cambria Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="195.0" text="ArtRest" textFill="#878787">
+               <font>
+                  <Font name="Cambria Bold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="434.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+         <children>
+            <TableView fx:id="table" prefHeight="317.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+               <columns>
+                  <TableColumn fx:id="name" prefWidth="342.0" text="Название товара" />
+                  <TableColumn fx:id="price" minWidth="0.0" prefWidth="219.0" text="Цена" />
+                  <TableColumn fx:id="quantity" prefWidth="108.0" text="Количество" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox fx:id="buttonHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveOrder" styleClass="add-button" stylesheets="@../css/orderView.css" text="Завершить заказ" textFill="#838383">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deleteRow" styleClass="add-button" stylesheets="@../css/orderView.css" text="Удалить товар" textFill="#838383">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

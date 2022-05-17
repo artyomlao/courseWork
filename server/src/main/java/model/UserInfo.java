@@ -1,6 +1,7 @@
-package entity;
+package model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +22,9 @@ public class UserInfo {
     @Basic
     @Column(name = "number")
     private String number;
+
+    @OneToMany(mappedBy = "userInfo")
+    private List<OrderInfo> orderInfo;
 
     public int getId() {
         return id;

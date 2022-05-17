@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserMenuViewController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="256.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="344.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="226.0" minHeight="3.0" prefHeight="33.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="7.0" prefHeight="33.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="1.0" prefHeight="48.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="6.0" prefHeight="51.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Заказ" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#addOffer" prefHeight="25.0" prefWidth="135.0" text="Добавить заказ" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#showOffers" prefHeight="25.0" prefWidth="136.0" text="Просмотреть заказы" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </GridPane.margin>
+      </Button>
+      <Label prefHeight="17.0" prefWidth="130.0" text="Мой профиль:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </GridPane.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <Label prefHeight="17.0" prefWidth="100.0" text="Логин:">
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="login" prefHeight="17.0" prefWidth="163.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <Label prefHeight="17.0" prefWidth="100.0" text="Телефон:">
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="number" prefHeight="17.0" prefWidth="163.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+         <children>
+            <Label prefHeight="17.0" prefWidth="100.0" text="Имя:">
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="firstName" prefHeight="17.0" prefWidth="163.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="11.0" prefWidth="272.0" GridPane.columnIndex="1">
+         <children>
+            <Label alignment="CENTER" cache="true" prefHeight="18.0" prefWidth="55.0" text="Привет, " />
+            <Label fx:id="welcomeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="40.0" />
+         </children>
+      </HBox>
+   </children>
+</GridPane>

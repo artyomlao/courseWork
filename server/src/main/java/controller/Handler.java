@@ -1,14 +1,8 @@
 package controller;
 
-import model.RequestChecker;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import java.io.*;
 import java.net.Socket;
 
-import static model.RequestType.REGISTRATION;
 
 public class Handler extends Thread {
     private static BufferedReader is;
@@ -26,11 +20,10 @@ public class Handler extends Thread {
             os = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
             while (socket.isConnected()) {
-                System.out.println(socket.getInetAddress().getHostName() + "ждет");
+                System.out.println("Пользователь с IP " + socket.getInetAddress().getHostName() + " в ожидании ответа");
 
                 String json;
                 json = is.readLine();
-
                 System.out.println(json);
 
                 new RequestChecker(json);

@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -30,11 +30,21 @@ public class RequestChecker {
         switch(requestType) {
             case "REGISTRATION": {
                 Registration reg = new Registration(jsonObject);
-                System.out.println("зарегистрирован чел");
+                System.out.println("Пользователь успешно зарегистрирован!");
                 break;
             }
             case "AUTHORISATION":{
                 Authorisation auth = new Authorisation(jsonObject);
+                break;
+            }
+            case "MAKE_ORDER":{
+                System.out.println("MAKE_ORDER");
+                Order order = new Order(jsonObject);
+                break;
+            }
+            case "GET_ORDER":{
+                Order order = new Order(jsonObject);
+                break;
             }
         }
     }

@@ -3,10 +3,7 @@ package controller;
 import java.io.*;
 import java.net.Socket;
 
-import model.ResponseChecker;
-import org.json.simple.JSONObject;
-
-public class Listener extends Thread{
+public class Listener{
     private static Socket socket;
     private static BufferedReader is;
     private static BufferedWriter os;
@@ -21,24 +18,35 @@ public class Listener extends Thread{
             e.printStackTrace();
         }
     }
-    @Override
-    public void run() {
+
+    public static String listen(){
+        String message = null;
         try {
-            while(socket.isConnected()){
-                String message = null;
-                message = is.readLine();
-                System.out.println(message);
-                ResponseChecker responseChecker = new ResponseChecker();
-                responseChecker.checkResponseType(message);
-            }
+            message = is.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(message);
+        return message;
     }
+//    @Override
+//    public void run() {
+//        try {
+//            while(socket.isConnected()){
+//                String message = null;
+//                message = is.readLine();
+//                System.out.println(message);
+//                ResponseChecker responseChecker = new ResponseChecker();
+//                responseChecker.checkResponseType(message);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void send(String json) {
         try {
-            os.write(json);
+            os.write(json + "\n");
             os.flush();
         } catch (IOException e) {
             e.printStackTrace();

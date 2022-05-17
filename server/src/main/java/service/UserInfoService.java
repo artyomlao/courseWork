@@ -1,13 +1,11 @@
 package service;
 
 import dao.UserInfoInt;
-import entity.UserInfo;
+import model.UserInfo;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import util.HibernateUtil;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class UserInfoService implements UserInfoInt {
@@ -19,6 +17,7 @@ public class UserInfoService implements UserInfoInt {
         session.save(userInfo);
 
         session.getTransaction().commit();
+        session.close();
 
     }
     public List<UserInfo> getAll(){
@@ -51,6 +50,16 @@ public class UserInfoService implements UserInfoInt {
         Query q = session.createQuery("from UserInfo");
         List<UserInfo> users = q.list();
         session.getTransaction().commit();
+        session.close();
         return users;
+    }
+
+    public UserInfo getUserInfo(String login){
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        Query q = session.createQuery("from UserInfo where login='" + login + "'");
+        UserInfo userInfo = (UserInfo)q.uniqueResult();
+        session.close();
+        return userInfo;
     }
 }

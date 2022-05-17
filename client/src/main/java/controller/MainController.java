@@ -10,7 +10,7 @@ import java.io.IOException;
 public class MainController extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("/com/lepesha/startWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("/com/lepesha/fxml/startWindow.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Рестик");
         stage.setScene(scene);

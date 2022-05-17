@@ -11,7 +11,7 @@ public class ServerMain {
             while(true){
                 Socket socket = serverSocket.accept();
                 new Handler(socket).start();
-                System.out.println("коннект есть" + socket.getInetAddress().getHostName());
+                System.out.println("Пользователь присоединился, Server IP: " + socket.getInetAddress().getHostName());
             }
         } catch (IOException e){
             e.printStackTrace();

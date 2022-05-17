@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMousePressed="#click" prefHeight="215.0" prefWidth="225.0" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ItemViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="63.0" layoutY="-10.0" prefHeight="190.0" prefWidth="200.0" stylesheets="@../css/orderView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Label fx:id="nameItemLabel" prefHeight="31.0" prefWidth="118.0" text="Пицца">
+                     <font>
+                        <Font name="Cambria" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="priceItemLabel" alignment="CENTER" prefHeight="35.0" prefWidth="84.0" text="7.99 р.">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <ImageView fx:id="imgItem" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/pizza.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="item" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -20,16 +20,13 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
-
-
     @FXML
     protected void onHelloButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/com/lepesha/loginView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/com/lepesha/fxml/loginView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         Listener listener = new Listener();
-        listener.start();
         stage.show();
         //welcomeText.setText("Welcome to JavaFX Application!");
     }

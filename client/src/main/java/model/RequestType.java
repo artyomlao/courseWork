@@ -1,5 +1,5 @@
 package model;
 
 public enum RequestType {
-    OFFER, AUTHORISATION, REGISTRATION
+    ORDER, AUTHORISATION, REGISTRATION, GET_ORDER
 }
