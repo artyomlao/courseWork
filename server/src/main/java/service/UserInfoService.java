@@ -20,7 +20,7 @@ public class UserInfoService implements UserInfoInt {
         session.close();
 
     }
-    public List<UserInfo> getAll(){
+    public List<UserInfo> getAll() {
 //        List<UserInfo> users =new ArrayList<>();
 //        Session session = HibernateUtil.getSession();
 //

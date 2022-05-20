@@ -88,6 +88,9 @@ public class LoginViewController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            AdminMenuViewController adminMenuViewController = fxmlLoader.getController();
+
+            adminMenuViewController.setLogin((String) jsonObjectFromServer.get("login"));
 
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

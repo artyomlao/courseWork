@@ -6,13 +6,15 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/restaurant</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="show_sql">true</property>
         <property name="connection.username">root</property>
         <property name="connection.password">artyomsql</property>
-        <property name="show_sql">true</property>
         <mapping class="model.UserInfo"/>
         <mapping class="model.OrderedItem"/>
         <mapping class="model.OrderInfo"/>
         <mapping class="model.AdminInfo"/>
+        <mapping class="model.Decision"/>
+        <mapping class="model.DecisionEfficiency"/>
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 

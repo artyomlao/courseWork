@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +16,17 @@ public class AdminInfo {
     @Basic
     @Column(name = "password")
     private String password;
+
+    public List<Decision> getDecision() {
+        return decision;
+    }
+
+    public void setDecision(List<Decision> decision) {
+        this.decision = decision;
+    }
+
+    @OneToMany(mappedBy = "adminInfo")
+    private List<Decision> decision;
 
     public int getId() {
         return id;

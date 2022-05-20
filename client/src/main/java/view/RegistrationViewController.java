@@ -20,6 +20,8 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class RegistrationViewController {
@@ -48,9 +50,16 @@ public class RegistrationViewController {
     }
 
 
-
     @FXML
     void register(ActionEvent event) {
+        if(checkForNumber(number.getText())==false){
+            message.setText("Номер некорректный! Введите в формате 375336850000");
+            return;
+        }
+        if(checkPassword(password.getText())==false){
+            message.setText("Пароль слишком легкий! Введите в формате 375336850000");
+            return;
+        }
         UserInfo userInfo = new UserInfo();
 
         userInfo.setFirstName(firstName.getText());
@@ -92,6 +101,18 @@ public class RegistrationViewController {
 
         }
         backToPreviousWindow(event);
+    }
+
+    private boolean checkForNumber(String number){
+        Pattern pattern = Pattern.compile("\\d{7,}");
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
+    }
+
+    private boolean checkPassword(String password){
+        Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[а-я])(?=.*[A-Z])(?=.*[А-Я])(?=.*[@#$%^&-+=()])(?=\\\\S+$).{8,20}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
     }
 
     public void backToPreviousWindow(ActionEvent event) {

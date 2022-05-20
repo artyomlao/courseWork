@@ -46,6 +46,18 @@ public class RequestChecker {
                 Order order = new Order(jsonObject);
                 break;
             }
+            case "MAKE_DECISION":{
+                DecisionController decisionController = new DecisionController(jsonObject);
+                break;
+            }
+            case "GET_DECISION":{
+                DecisionController decisionController = new DecisionController();
+                break;
+            }
+            case "GET_USERINFO":{
+                UserController userController = new UserController();
+                break;
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ public class Validation {
 
     Validation(){
         users = new UserInfoService().getAll();
+        admins = new AdminInfoService().getAll();
     }
 
     Validation(UserInfo userInfo){
@@ -73,8 +74,9 @@ public class Validation {
         Iterator<AdminInfo> itr = admins.iterator();
 
         while (itr.hasNext()){
-            if(itr.next().getLogin().equals(login)){
-                if(itr.next().getPassword().equals(password)) return true;
+            AdminInfo adminInfo = itr.next();
+            if(adminInfo.getLogin().equals(login)){
+                if(adminInfo.getPassword().equals(password)) return true;
             }
         }
         return false;

@@ -36,7 +36,7 @@ public class Registration {
         userInfoService = new UserInfoService();
         Validation validation = new Validation(userInfo);
 
-        if((validation.checkLoginInUserTable() && validation.checkLoginInAdminTable())==true) {
+        if((validation.checkLoginInUserTable() || validation.checkLoginInAdminTable())==true) {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("message", "LoginExists");
             Handler.send(jsonObject.toString());
