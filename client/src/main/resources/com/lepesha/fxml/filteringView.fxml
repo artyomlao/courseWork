@@ -6,32 +6,42 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="view.FilteringView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="396.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="396.0" styleClass="background-color" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FilteringViewController">
    <children>
       <VBox alignment="CENTER" prefHeight="209.0" prefWidth="396.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="250.0" text="1 средняя эффективность:">
+            <Label prefHeight="17.0" prefWidth="250.0" text="1 средняя эффективность:" textFill="WHITE">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
             </Label>
-            <TextField fx:id="firstAvgEfficiency">
+            <TextField fx:id="firstAvgEfficiency" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                <VBox.margin>
                   <Insets bottom="15.0" left="60.0" right="60.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <Label prefHeight="17.0" prefWidth="250.0" text="2 средняя эффективность:">
+            <Label prefHeight="25.0" prefWidth="249.0" text="2 средняя эффективность:" textFill="WHITE">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
             </Label>
-            <TextField fx:id="secondAvgEfficiency" prefHeight="25.0" prefWidth="323.0">
+            <TextField fx:id="secondAvgEfficiency" prefHeight="25.0" prefWidth="323.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                <VBox.margin>
                   <Insets bottom="15.0" left="60.0" right="60.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#filtering" text="Ок" />
+            <Button mnemonicParsing="false" onAction="#filtering" prefHeight="25.0" prefWidth="62.0" styleClass="button-admin" stylesheets="@../css/orderView.css" text="Ок" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="17.0" />
+               </font></Button>
          </children>
       </VBox>
    </children>

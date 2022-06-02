@@ -1,5 +1,6 @@
 package service;
 
+import dao.DecisionEfficiencyInt;
 import model.DecisionEfficiency;
 import org.hibernate.Session;
 import util.HibernateUtil;
@@ -7,7 +8,7 @@ import util.HibernateUtil;
 import org.hibernate.query.Query;
 import java.util.List;
 
-public class DecisionEfficiencyService {
+public class DecisionEfficiencyService implements DecisionEfficiencyInt {
     public void add(DecisionEfficiency decisionEfficiency){
         Session session = HibernateUtil.getSession();
         try{

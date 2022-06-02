@@ -9,136 +9,177 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="view.AddDecisionViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="800.0" styleClass="background-color" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddDecisionViewController">
    <children>
-      <BorderPane layoutX="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="617.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <VBox alignment="CENTER" prefHeight="89.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="44.0" prefWidth="600.0">
                      <children>
+                        <Label prefHeight="23.0" prefWidth="484.0" text="Label">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
                         <Label fx:id="messageLabel" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#addDecision" text="Добавить" />
+                        <Button mnemonicParsing="false" onAction="#addDecision" styleClass="general-text-field" stylesheets="@../css/orderView.css" text="Добавить" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic Bold" size="16.0" />
+                           </font></Button>
                      </children>
                   </HBox>
                </children>
             </VBox>
          </bottom>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="321.0" prefWidth="589.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button onAction="#backToPreviousWindow" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Вернуться" />
+                        <Button mnemonicParsing="false" onAction="#backToPreviousWindow" prefHeight="29.0" prefWidth="110.0" styleClass="general-text-field" stylesheets="@../css/orderView.css" text="Вернуться" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic Bold" size="15.0" />
+                           </font></Button>
                         <Pane prefHeight="76.0" prefWidth="98.0" />
-                        <Label prefHeight="17.0" prefWidth="127.0" text="Название товара :" />
-                        <TextField fx:id="itemName" prefHeight="25.0" prefWidth="152.0" />
+                        <Label prefHeight="23.0" prefWidth="217.0" text="Название товара :" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font></Label>
+                        <TextField fx:id="itemName" prefHeight="25.0" prefWidth="178.0" styleClass="general-text-field" stylesheets="@../css/orderView.css" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="259.0" prefWidth="600.0">
+                  <HBox alignment="CENTER" prefHeight="406.0" prefWidth="780.0">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0">
+                        <VBox alignment="CENTER" prefHeight="406.0" prefWidth="270.0">
                            <children>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Покупка в начале 1 месяца:">
+                              <Label prefHeight="23.0" prefWidth="289.0" text="Покупка в начале 1 месяца:" textFill="WHITE">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="firstBuy" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="firstBuy" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label prefHeight="17.0" prefWidth="162.0" text="Дивиденды в 1 месяце">
+                              <Label prefHeight="20.0" prefWidth="281.0" text="Дивиденды в 1 месяце:" textFill="WHITE">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="50.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="firstDividends" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="firstDividends" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Продажа в конце 1 месяца:">
+                              <Label prefHeight="22.0" prefWidth="272.0" text="Продажа в конце 1 месяца:" textFill="WHITE">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="50.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="firstSell" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="firstSell" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="377.0" prefWidth="200.0">
+                        <VBox alignment="CENTER" prefHeight="406.0" prefWidth="269.0">
                            <children>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Покупка в начале 2 месяца:">
+                              <Label prefHeight="23.0" prefWidth="267.0" text="Покупка в начале 2 месяца:" textFill="WHITE">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="secondBuy" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="secondBuy" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Дивиденды в 2 месяце">
+                              <Label prefHeight="23.0" prefWidth="264.0" text="Дивиденды в 2 месяце:" textFill="WHITE">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="50.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="secondDividends" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="secondDividends" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Продажа в конце 2 месяца:">
+                              <Label prefHeight="23.0" prefWidth="265.0" text="Продажа в конце 2 месяца:" textFill="WHITE">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="50.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="secondSell" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="secondSell" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0">
+                        <VBox alignment="CENTER" prefHeight="406.0" prefWidth="274.0">
                            <children>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Покупка в начале 3 месяца:">
+                              <Label prefHeight="23.0" prefWidth="270.0" text="Покупка в начале 3 месяца:" textFill="WHITE">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="thirdBuy" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="thirdBuy" prefHeight="25.0" prefWidth="184.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label prefHeight="22.0" prefWidth="224.0" text="Дивиденды в 3 месяце:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="thirdDividends" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Дивиденды в 3 месяце">
+                              <Label prefHeight="22.0" prefWidth="322.0" text="Продажа в конце 3 месяца: " textFill="WHITE">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="50.0" />
                                  </VBox.margin>
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
                               </Label>
-                              <TextField fx:id="thirdDividends" prefHeight="25.0" prefWidth="152.0">
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </TextField>
-                              <Label prefHeight="17.0" prefWidth="164.0" text="Продажа в конце 3 месяца:">
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TextField fx:id="thirdSell" prefHeight="25.0" prefWidth="152.0">
+                              <TextField fx:id="thirdSell" prefHeight="25.0" prefWidth="152.0" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>

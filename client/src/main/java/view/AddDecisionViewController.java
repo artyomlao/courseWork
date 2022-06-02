@@ -91,8 +91,9 @@ public class AddDecisionViewController {
 
             alert.setTitle("Предупреждение");
             alert.setHeaderText("Неправильный ввод данных!");
-            alert.setContentText("Проверьте название вашего товара, а также значения "
-                    + "решения должны быть либо целыми либо дробными в формате '3000' или '3000.1' ");
+            alert.setContentText("Проверьте название вашего товара(он обязательно должен содержать хотя бы один символ!),"
+                    + " а также значения решения должны быть либо целыми либо дробными в формате '3000' или '3000.1' "
+                    + " ");
 
             alert.showAndWait();
         }
@@ -107,7 +108,7 @@ public class AddDecisionViewController {
     }
 
     private boolean checkForText(String item){
-        Pattern pattern = Pattern.compile("\\w{2,}|\\W{2,}");
+        Pattern pattern = Pattern.compile("^(?=.*(\\w|[а-я]|[А-Я])).{1,20}$");
         Matcher matcher = pattern.matcher(item);
         System.out.println("checking item " + matcher.matches());
         return matcher.matches();

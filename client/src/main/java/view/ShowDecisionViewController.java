@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -30,7 +31,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class ShowDecisionView implements Initializable {
+public class ShowDecisionViewController implements Initializable {
     @FXML
     private TableColumn<DecisionEfficiency, Double> avgEfficiency;
 
@@ -66,7 +67,7 @@ public class ShowDecisionView implements Initializable {
 
     private XYChart.Series<String, Number> intermediateDataSeries;
 
-    private static ObservableList<DecisionEfficiency> allDecisionsList = FXCollections.observableArrayList();
+    private ObservableList<DecisionEfficiency> allDecisionsList = FXCollections.observableArrayList();
 
     private ObservableList<DecisionEfficiency> intermediateList = FXCollections.observableArrayList();
 
@@ -173,11 +174,11 @@ public class ShowDecisionView implements Initializable {
             e.printStackTrace();
         }
 
-        FilteringView filteringView = fxmlLoader.getController();
+        FilteringViewController filteringViewController = fxmlLoader.getController();
 
-        filteringView.setList(allDecisionsList);
+        filteringViewController.setList(allDecisionsList);
 
-        filteringView.setShowDecisionViewFXMLLoader(thatFXMLLoader);
+        filteringViewController.setShowDecisionViewFXMLLoader(thatFXMLLoader);
 
         Stage stage = new Stage();
         stage.initModality(Modality.WINDOW_MODAL);
@@ -207,5 +208,19 @@ public class ShowDecisionView implements Initializable {
             }
             table.setItems(intermediateList);
         }
+    }
+
+    public void back(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/lepesha/fxml/adminMenuView.fxml"));
+
+        Parent root=null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

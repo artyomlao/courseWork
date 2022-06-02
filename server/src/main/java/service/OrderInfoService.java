@@ -1,12 +1,13 @@
 package service;
 
+import dao.OrderInfoInt;
 import model.OrderInfo;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import util.HibernateUtil;
 import java.util.List;
 
-public class OrderInfoService {
+public class OrderInfoService implements OrderInfoInt {
     public void add(OrderInfo orderInfo){
         Session session = HibernateUtil.getSession();
 

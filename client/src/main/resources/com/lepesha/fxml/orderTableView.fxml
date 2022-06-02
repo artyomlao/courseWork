@@ -9,37 +9,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OrderTableViewController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="background-color" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OrderTableViewController">
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="343.0" stylesheets="@../css/orderView.css">
+      <HBox alignment="CENTER" prefHeight="89.0" prefWidth="700.0" stylesheets="@../css/orderView.css">
          <children>
-            <Label alignment="CENTER" prefHeight="49.0" prefWidth="207.0" text="Ресторан" textFill="#858585">
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="195.0" text="ArtRest" textFill="#e1e1e1">
                <font>
-                  <Font name="Cambria Bold" size="32.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="49.0" prefWidth="195.0" text="ArtRest" textFill="#878787">
-               <font>
-                  <Font name="Cambria Bold" size="37.0" />
+                  <Font name="Century" size="34.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <VBox alignment="CENTER" prefHeight="434.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+      <VBox alignment="CENTER" prefHeight="456.0" prefWidth="700.0" stylesheets="@../css/orderView.css">
          <children>
-            <TableView fx:id="table" prefHeight="317.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+            <TableView fx:id="table" prefHeight="317.0" prefWidth="700.0" stylesheets="@../css/orderView.css">
                <columns>
                   <TableColumn fx:id="name" prefWidth="342.0" text="Название товара" />
-                  <TableColumn fx:id="price" minWidth="0.0" prefWidth="219.0" text="Цена" />
-                  <TableColumn fx:id="quantity" prefWidth="108.0" text="Количество" />
+                  <TableColumn fx:id="price" minWidth="0.0" prefWidth="105.0" text="Цена" />
+                  <TableColumn fx:id="quantity" prefWidth="222.0" text="Количество" />
                </columns>
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
             </TableView>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="700.0">
+               <children>
+                  <Label fx:id="message" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font></Label>
+               </children>
+            </HBox>
             <HBox fx:id="buttonHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#saveOrder" styleClass="add-button" stylesheets="@../css/orderView.css" text="Завершить заказ" textFill="#838383">
+                  <Button mnemonicParsing="false" onAction="#saveOrder" styleClass="general-text-field" stylesheets="@../css/orderView.css" text="Завершить заказ" textFill="WHITE">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
@@ -47,7 +50,7 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#deleteRow" styleClass="add-button" stylesheets="@../css/orderView.css" text="Удалить товар" textFill="#838383">
+                  <Button mnemonicParsing="false" onAction="#deleteRow" styleClass="general-text-field" stylesheets="@../css/orderView.css" text="Удалить товар" textFill="WHITE">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>

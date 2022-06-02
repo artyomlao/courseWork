@@ -1,5 +1,6 @@
 package service;
 
+import dao.AdminInfoInt;
 import model.AdminInfo;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -9,7 +10,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminInfoService {
+public class AdminInfoService implements AdminInfoInt {
     public List<AdminInfo> getAll(){
         List<AdminInfo> list = new ArrayList<>();
         Session session = HibernateUtil.getSession();

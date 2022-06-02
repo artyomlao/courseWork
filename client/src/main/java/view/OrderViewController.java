@@ -76,6 +76,7 @@ public class OrderViewController implements Initializable {
     private Parent orderTableViewRoot;
     private Stage stage;// this field are for scene with TableView
 
+
     public void setUserMenuWindowInfo(String authorisedLogin, String authorisedNumber,
                                       String authorisedFirstName, String welcomeLabel){
         this.authorisedLogin = authorisedLogin;
@@ -199,7 +200,7 @@ public class OrderViewController implements Initializable {
                         authorisedFirstName);
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }

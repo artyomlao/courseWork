@@ -57,7 +57,7 @@ public class RegistrationViewController {
             return;
         }
         if(checkPassword(password.getText())==false){
-            message.setText("Пароль слишком легкий! Введите в формате 375336850000");
+            message.setText("Пароль слишком легкий! Он должен быть размером, более чем 6 символов и содержать буквы или цифры");
             return;
         }
         UserInfo userInfo = new UserInfo();
@@ -110,7 +110,7 @@ public class RegistrationViewController {
     }
 
     private boolean checkPassword(String password){
-        Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[а-я])(?=.*[A-Z])(?=.*[А-Я])(?=.*[@#$%^&-+=()])(?=\\\\S+$).{8,20}$");
+        Pattern pattern = Pattern.compile("^(?=.*(\\w|[а-я]|[А-Я])).{8,20}$");
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
@@ -123,7 +123,7 @@ public class RegistrationViewController {
             e.printStackTrace();
         }
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }

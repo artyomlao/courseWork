@@ -12,8 +12,16 @@
     -fx-background-radius: 30;
 }
 
+.search-button:hover{
+    -fx-background-color: #b8b8b8;
+}
+
+.search-button:pressed{
+    -fx-background-color: #ffe1e1;
+}
+
 .left-vbox{
-    -fx-background-color: #D3D3D3;
+    -fx-background-color: rgba(149, 0, 255, 0.6);
 }
 
 .add-button{
@@ -25,12 +33,13 @@
     -fx-background-color: #EE0000;
     -fx-background-radius: 20;
 }
+
 .combo-box{
     -fx-background-color: rgba(255, 255, 255, 0.4);
 }
 
 .internet-shop-box{
-    -fx-background-color: #BAEAC3;
+    -fx-background-color: #7fff8e;
     -fx-background-radius: 30;
 }
 
@@ -44,9 +53,131 @@
 }
 
 .table-view-window{
-    -fx-background-color: linear-gradient(to right, #DDEFBB, #FFEEEE);
+    -fx-background-color: linear-gradient(to right, rgba(150, 0, 255, 0.4), #ff86cb);
 }
 
 .table-view {
     -fx-background-color: transparent;
 }
+
+.background-window{
+    -fx-background-color: #fff6f6;
+}
+
+.login-left-window{
+    -fx-background-color: rgba(149, 0, 255, 0.8);
+    -fx-background-radius: 0 30 30 0;
+}
+
+.login-right-window{
+    -fx-background-color: #ffffff;
+}
+
+.general-text-field{
+    -fx-background-color: #34395e;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+}
+
+.input-text-field{
+    -fx-background-radius: 15;
+}
+
+.background-color{
+    -fx-background-color: #2d2d53;
+}
+
+.button-admin {
+    -fx-background-color: #34395e;
+    -fx-background-radius: 50;
+}
+
+.button-admin:hover{
+    -fx-background-color: #b8b8b8;
+}
+
+.button-admin:pressed{
+    -fx-background-color: #ffe1e1;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, #2b5876, #4e4376);
+    -fx-background-radius: 5px 5px 5px 5px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+    -fx-text-background-color: white;
+}
+
+.column-table:hover {
+    -fx-border-color: transparent lightgray transparent transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell{
+    -fx-border-color: #4e4376;
+    -fx-background-color: #cebcbc;
+    -fx-text-background-color: white
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #fd0000;
+    -fx-text-background-color: #cebcbc;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #4e4376;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.chart{
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: tranparent;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #3278fa;
+}
+
+.default-color0.chart-bar{
+    -fx-bar-fill: #e216ff;
+}
+
+.default-color1.chart-bar{
+    -fx-bar-fill: rgba(38, 255, 132, 0.27);
+}
+
+.chart-legend{
+    -fx-background-color: transparent;
+    -fx-text-background-color: white;
+}
+
+

@@ -2,10 +2,12 @@ package view;
 
 import controller.Listener;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.UserInfo;
@@ -14,10 +16,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 public class AdminMenuViewController {
+    @FXML
+    private Label bestItemLabel;
+
     private String login;
 
     public void setLogin(String login) {
@@ -54,11 +58,11 @@ public class AdminMenuViewController {
             e.printStackTrace();
         }
 
-        ShowDecisionView showDecisionView = fxmlLoader.getController();
+        ShowDecisionViewController showDecisionViewController = fxmlLoader.getController();
 
-        showDecisionView.setThisFXMLLoader(fxmlLoader);
+        showDecisionViewController.setThisFXMLLoader(fxmlLoader);
 
-        showDecisionView.setData();
+        showDecisionViewController.setData();
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -105,8 +109,50 @@ public class AdminMenuViewController {
             userInfoViewController.addUserInfo(userInfo);
         }
 
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    public void logOut(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/lepesha/fxml/loginView.fxml"));
+
+        Parent root=null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+    }
+
+    public void bestItem(ActionEvent event) {
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("requestType", "GET_BEST_ITEM");
+
+        Listener.send(jsonObject.toJSONString());
+
+        String response = Listener.listen();
+
+        JSONObject jsonObjectFromServer = null;
+        try {
+            jsonObjectFromServer = (JSONObject) new JSONParser().parse(response);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if(jsonObjectFromServer.get("requestMessage").equals("noGoodItems")) {
+            bestItemLabel.setText("Измерения всех товаров неточны! Проверьте корректность введённых данных");
+        } else{
+            String name = (String) jsonObjectFromServer.get("name");
+            String avgEfficiency = (String) jsonObjectFromServer.get("avgEfficiency");
+            String dispersion = (String) jsonObjectFromServer.get("dispersion");
+
+            bestItemLabel.setText("Название: " + name + ", Средняя эффективность: " + avgEfficiency + ", Дисперсия: " + dispersion);
+        }
     }
 }

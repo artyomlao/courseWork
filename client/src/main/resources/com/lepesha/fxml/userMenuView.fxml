@@ -3,83 +3,192 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserMenuViewController">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="256.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="344.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="226.0" minHeight="3.0" prefHeight="33.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="7.0" prefHeight="33.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="1.0" prefHeight="48.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="6.0" prefHeight="51.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+<AnchorPane prefHeight="935.0" prefWidth="1220.0" styleClass="transparent" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserMenuViewController">
    <children>
-      <Label text="Заказ" GridPane.rowIndex="6">
-         <GridPane.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </GridPane.margin>
-      </Label>
-      <Button mnemonicParsing="false" onAction="#addOffer" prefHeight="25.0" prefWidth="135.0" text="Добавить заказ" GridPane.rowIndex="7">
-         <GridPane.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </GridPane.margin>
-      </Button>
-      <Button mnemonicParsing="false" onAction="#showOffers" prefHeight="25.0" prefWidth="136.0" text="Просмотреть заказы" GridPane.rowIndex="8">
-         <GridPane.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </GridPane.margin>
-      </Button>
-      <Label prefHeight="17.0" prefWidth="130.0" text="Мой профиль:" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </GridPane.margin>
-      </Label>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-         <children>
-            <Label prefHeight="17.0" prefWidth="100.0" text="Логин:">
-               <HBox.margin>
-                  <Insets left="35.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="login" prefHeight="17.0" prefWidth="163.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-         <children>
-            <Label prefHeight="17.0" prefWidth="100.0" text="Телефон:">
-               <HBox.margin>
-                  <Insets left="35.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="number" prefHeight="17.0" prefWidth="163.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-         <children>
-            <Label prefHeight="17.0" prefWidth="100.0" text="Имя:">
-               <HBox.margin>
-                  <Insets left="35.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="firstName" prefHeight="17.0" prefWidth="163.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="11.0" prefWidth="272.0" GridPane.columnIndex="1">
-         <children>
-            <Label alignment="CENTER" cache="true" prefHeight="18.0" prefWidth="55.0" text="Привет, " />
-            <Label fx:id="welcomeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="40.0" />
-         </children>
-      </HBox>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="911.0" prefWidth="865.0" styleClass="login-right-window" stylesheets="@../css/orderView.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="195.0" text="Мой профиль" textAlignment="CENTER">
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefHeight="1.0" prefWidth="548.0">
+                     <VBox.margin>
+                        <Insets left="60.0" right="60.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="685.0">
+                     <children>
+                        <Label prefHeight="31.0" prefWidth="69.0" text="Логин:">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="login" prefHeight="27.0" prefWidth="230.0">
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="685.0">
+                     <children>
+                        <Label prefHeight="31.0" prefWidth="118.0" text="Телефон:">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="number" prefHeight="27.0" prefWidth="173.0">
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="31.0" prefWidth="50.0" text="Имя:">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="firstName" prefHeight="27.0" prefWidth="263.0">
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="11.0" prefWidth="272.0">
+                     <children>
+                        <Label alignment="CENTER" cache="true" prefHeight="31.0" prefWidth="90.0" text="Привет, " textFill="#b5b5b5">
+                           <font>
+                              <Font name="Century Gothic Bold" size="20.0" />
+                           </font></Label>
+                        <Label fx:id="welcomeLabel" prefHeight="31.0" prefWidth="119.0" textFill="#b5b5b5">
+                           <font>
+                              <Font name="Century Gothic Bold" size="20.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <VBox alignment="CENTER" prefHeight="843.0" prefWidth="322.0" styleClass="background-color" stylesheets="@../css/orderView.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="84.0" prefWidth="322.0">
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/restaurant.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="290.0" prefWidth="322.0" />
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="322.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/plus.png" />
+                           </image>
+                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="178.0" styleClass="user-menu-hbox" stylesheets="@../css/orderView.css">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addOffer" prefHeight="31.0" prefWidth="227.0" styleClass="transparent" stylesheets="@../css/orderView.css" text="Добавить заказ" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="55.0" prefWidth="322.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="259.0" styleClass="user-menu-hbox" stylesheets="@../css/orderView.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/eye.png" />
+                                 </image>
+                              </ImageView>
+                              <Button mnemonicParsing="false" onAction="#showOffers" prefHeight="20.0" prefWidth="183.0" styleClass="transparent" stylesheets="@../css/orderView.css" text="Просмотреть заказы" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="55.0" prefWidth="322.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="35.0" prefWidth="259.0" styleClass="user-menu-hbox" stylesheets="@../css/orderView.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/door.png" />
+                                 </image>
+                              </ImageView>
+                              <Button mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="183.0" styleClass="transparent" stylesheets="@../css/orderView.css" text="Выйти из аккаунта" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="290.0" prefWidth="322.0" />
+                  <HBox prefHeight="85.0" prefWidth="322.0" />
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
    </children>
-</GridPane>
+</AnchorPane>

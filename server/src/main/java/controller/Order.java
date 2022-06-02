@@ -26,7 +26,7 @@ public class Order {
 
     public Order(JSONObject jsonObject){
         this.jsonObject = jsonObject;
-        if(jsonObject.get("requestType").equals("MAKE_ORDER")){
+        if(jsonObject.get("requestType").equals("MAKE_ORDER")) {
             Long sizeLong = (Long) jsonObject.get("size");
             size = sizeLong.intValue();
             UserInfoService userInfoService = new UserInfoService();
@@ -55,7 +55,6 @@ public class Order {
                 orderedItemService.add(orderedItem);
             }
         }
-
         else if(jsonObject.get("requestType").equals("GET_ORDER")){
             this.login = (String) jsonObject.get("login");
             OrderInfoService orderInfoService = new OrderInfoService();

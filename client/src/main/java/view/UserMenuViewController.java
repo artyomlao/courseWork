@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Item;
@@ -56,6 +57,22 @@ public class UserMenuViewController {
         }
     }
 
+
+
+    public void logOut(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/lepesha/fxml/loginView.fxml"));
+
+        Parent root=null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
     @FXML
     void showOffers(ActionEvent event) {
         JSONObject jsonObject = new JSONObject();
@@ -102,5 +119,4 @@ public class UserMenuViewController {
         stage.setTitle("TableView");
         stage.show();
     }
-
 }

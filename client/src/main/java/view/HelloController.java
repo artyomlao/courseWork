@@ -18,9 +18,6 @@ public class HelloController {
     private Parent root;
 
     @FXML
-    private Label welcomeText;
-
-    @FXML
     protected void onHelloButtonClick(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/com/lepesha/fxml/loginView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

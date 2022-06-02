@@ -14,34 +14,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ShowDecisionView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1236.0" styleClass="background-color" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ShowDecisionViewController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox alignment="CENTER" prefHeight="923.0" prefWidth="260.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#filtering" text="Фильтрация" />
-               </children></VBox>
-         </left>
          <center>
-            <VBox fx:id="vBoxWithTableView" alignment="CENTER_LEFT" prefHeight="923.0" prefWidth="979.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="vBoxWithTableView" alignment="CENTER_LEFT" prefHeight="923.0" prefWidth="979.0" styleClass="user-menu-button" stylesheets="@../css/orderView.css" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="table" prefHeight="342.0" prefWidth="804.0">
+                  <HBox alignment="TOP_RIGHT" prefHeight="31.0" prefWidth="976.0">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#back" styleClass="button-admin" stylesheets="@../css/orderView.css" text="Back" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="table" prefHeight="342.0" prefWidth="1171.0" stylesheets="@../css/orderView.css">
                     <columns>
                       <TableColumn fx:id="itemName" prefWidth="160.0" text="Название товара" />
                       <TableColumn fx:id="firstEfficiency" minWidth="0.0" prefWidth="160.0" text="1 удельная эфф-ть" />
-                        <TableColumn fx:id="secondEfficiency" prefWidth="160.0" text="2 удельная эфф-ть" />
-                        <TableColumn fx:id="thirdEfficiency" prefWidth="160.0" text="3 удельная эфф-ть" />
-                        <TableColumn fx:id="avgEfficiency" prefWidth="160.0" text="Средняя эфф-ть" />
-                        <TableColumn fx:id="dispersion" prefWidth="135.0" text="Дисперсия" />
+                        <TableColumn fx:id="secondEfficiency" prefWidth="184.0" text="2 удельная эфф-ть" />
+                        <TableColumn fx:id="thirdEfficiency" prefWidth="175.0" text="3 удельная эфф-ть" />
+                        <TableColumn fx:id="avgEfficiency" prefWidth="223.0" text="Средняя эфф-ть" />
+                        <TableColumn fx:id="dispersion" prefWidth="293.0" text="Дисперсия" />
                     </columns>
                      <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
                      </VBox.margin>
                   </TableView>
-                  <BarChart fx:id="chart" prefHeight="371.0" prefWidth="950.0">
+                  <BarChart fx:id="chart" prefHeight="371.0" prefWidth="950.0" styleClass="transparent" stylesheets="@../css/orderView.css">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis side="BOTTOM" stylesheets="@../css/orderView.css" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
@@ -55,16 +64,16 @@
                         <Insets left="20.0" right="20.0" top="20.0" />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="322.0" styleClass="search-box" stylesheets="@../css/orderView.css">
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="322.0" styleClass="user-menu-hbox" stylesheets="@../css/orderView.css">
                            <children>
-                              <TextField fx:id="textFieldSearch" prefHeight="31.0" prefWidth="161.0" promptText="Название товара" styleClass="transparent" stylesheets="@../css/orderView.css">
+                              <TextField fx:id="textFieldSearch" prefHeight="31.0" prefWidth="201.0" promptText="Название товара" styleClass="general-text-field" stylesheets="@../css/orderView.css">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </TextField>
-                              <Button mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="28.0" prefWidth="91.0" styleClass="search-button" text="Поиск">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="28.0" prefWidth="91.0" styleClass="button-admin" text="Поиск" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria" size="14.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="10.0" />
@@ -72,6 +81,14 @@
                               </Button>
                            </children>
                         </HBox>
+                        <Button mnemonicParsing="false" onAction="#filtering" prefHeight="31.0" prefWidth="114.0" styleClass="button-admin" stylesheets="@../css/orderView.css" text="Фильтрация" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
                      </children>
                   </HBox>
                </children>

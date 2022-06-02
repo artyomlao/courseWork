@@ -51,7 +51,7 @@ public class LoginViewController {
 
         Parent root = fxmlLoader.getRoot();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
@@ -120,7 +120,7 @@ public class LoginViewController {
                             authorisedFirstName,
                             authorisedFirstName);
 
-            Scene scene = new Scene(root, 600, 400);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }

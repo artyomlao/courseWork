@@ -1,5 +1,6 @@
 package service;
 
+import dao.OrderedItemInt;
 import model.OrderInfo;
 import model.OrderedItem;
 import org.hibernate.Session;
@@ -9,7 +10,7 @@ import util.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderedItemService {
+public class OrderedItemService implements OrderedItemInt {
     public void add(OrderedItem orderedItem){
         Session session = HibernateUtil.getSession();
         session.beginTransaction();

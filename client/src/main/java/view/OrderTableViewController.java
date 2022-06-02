@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +43,10 @@ public class OrderTableViewController implements Initializable {
 
     @FXML
     private HBox buttonHBox;
+
+    @FXML
+    private Label message;
+
 
     private String authorisedLogin;
     private String authorisedNumber;
@@ -81,6 +86,11 @@ public class OrderTableViewController implements Initializable {
     }
 
     public void saveOrder(ActionEvent event) {
+        if(list.size()==0){
+            message.setText("Нет товаров в корзине !");
+            return;
+        }
+        message.setText("");
         JSONObject jsonObject = new JSONObject();
 
         for (int i = 0; i < list.size(); i++) {
@@ -98,26 +108,7 @@ public class OrderTableViewController implements Initializable {
         System.out.println(json);
         Listener.send(json);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/lepesha/fxml/userMenuView.fxml"));
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        UserMenuViewController userMenuViewController= fxmlLoader.getController();
-        Parent root = fxmlLoader.getRoot();
-
-        userMenuViewController.setFields
-                        (authorisedLogin,
-                        authorisedNumber,
-                        authorisedFirstName,
-                        welcomeLabel);
-
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 600, 400);
-        stage.setScene(scene);
-        stage.show();
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

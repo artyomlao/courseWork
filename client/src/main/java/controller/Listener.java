@@ -11,7 +11,7 @@ public class Listener{
     public Listener() {
         try {
             socket = new Socket("127.0.0.1", 8000);
-            System.out.println("законнектились");
+            System.out.println("Успешное соединение с сервером!");
             is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             os = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         } catch (IOException e) {

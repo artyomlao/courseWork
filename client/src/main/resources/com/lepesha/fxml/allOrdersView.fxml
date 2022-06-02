@@ -8,25 +8,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AllOrdersViewController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="background-color" stylesheets="@../css/orderView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AllOrdersViewController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="343.0" stylesheets="@../css/orderView.css">
          <children>
-            <Label alignment="CENTER" prefHeight="49.0" prefWidth="207.0" text="Ресторан" textFill="#858585">
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="207.0" text="Ресторан" textFill="WHITE">
                <font>
                   <Font name="Cambria Bold" size="32.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" prefHeight="49.0" prefWidth="195.0" text="ArtRest" textFill="#878787">
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="195.0" text="ArtRest" textFill="WHITE">
                <font>
                   <Font name="Cambria Bold" size="37.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <VBox alignment="CENTER" prefHeight="434.0" prefWidth="700.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+      <VBox alignment="CENTER" prefHeight="434.0" prefWidth="700.0" stylesheets="@../css/orderView.css">
          <children>
-            <TableView fx:id="table" prefHeight="424.0" prefWidth="670.0" styleClass="table-view-window" stylesheets="@../css/orderView.css">
+            <TableView fx:id="table" prefHeight="424.0" prefWidth="670.0" stylesheets="@../css/orderView.css">
                <columns>
                   <TableColumn fx:id="orderId" prefWidth="120.0" text="Код заказа" />
                   <TableColumn fx:id="name" prefWidth="255.0" text="Название товара" />

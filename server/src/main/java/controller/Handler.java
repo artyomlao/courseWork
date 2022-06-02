@@ -1,5 +1,7 @@
 package controller;
 
+import util.HibernateUtil;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -29,7 +31,12 @@ public class Handler extends Thread {
                 new RequestChecker(json);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                socket.close();
+                System.out.println("Пользователь отключился!");
+            } catch (IOException ex) {
+                System.out.println("Exception socket closing");
+            }
         }
     }
 

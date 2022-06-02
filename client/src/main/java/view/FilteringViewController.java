@@ -6,10 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import model.DecisionEfficiency;
 
 import java.util.ArrayList;
@@ -17,7 +15,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FilteringView {
+public class FilteringViewController {
     @FXML
     private TextField firstAvgEfficiency;
 
@@ -60,12 +58,12 @@ public class FilteringView {
                 }
             }
 
-            ShowDecisionView showDecisionView = showDecisionViewFXMLLoader.getController();
-            showDecisionView.setIntermediateList(filteringList);
+            ShowDecisionViewController showDecisionViewController = showDecisionViewFXMLLoader.getController();
+            showDecisionViewController.setIntermediateList(filteringList);
 
-            showDecisionView.setIntermediateDataSeries(filteringList);
+            showDecisionViewController.setIntermediateDataSeries(filteringList);
 
-            showDecisionView.setIntermediateListTableItems();
+            showDecisionViewController.setIntermediateListTableItems();
 
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.close();
