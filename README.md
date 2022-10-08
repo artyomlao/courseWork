@@ -11,7 +11,7 @@ And then we will move to authorisation window. If our account doesn't exist, we 
 Next we see profile view
 ![](img/img_1.png)
 #### Restaurant Menu
-If at previous window we push button 'Добавить заказ', program shows that one. Menu where we can get some food.
+If at previous window we push button with adding order, program shows that one. Menu where we can get some food.
 Tbh that design of this terrific window wasn't mine)
 ![](img/img_2.png)
 #### Order View
